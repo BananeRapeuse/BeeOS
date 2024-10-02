@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeeOS</title>
+    <!-- Lien vers la police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: black;
             color: white;
-            font-family: 'Courier', 'Menlo', monospace; /* Police similaire à PongoOS */
+            font-family: 'Roboto', 'Courier', monospace; /* Police choisie */
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,10 +23,9 @@
         }
 
         #ascii-art {
-            padding: 10px; /* Espacement entre le texte et les bords de l'écran */
+            padding: 10px;
         }
 
-        /* Masque initialement les éléments */
         .hidden {
             opacity: 0;
             transition: opacity 1s ease-in;
@@ -45,16 +46,16 @@
     </div>
 
     <script>
-        // Le texte 1 et 2 apparaissent instantanément
+        // Texte 1 et 2 apparaissent instantanément
         document.getElementById('line1').style.opacity = 1;
         document.getElementById('line2').style.opacity = 1;
 
-        // Le texte 3 apparaît après 1 seconde
+        // Texte 3 après 1 seconde
         setTimeout(function() {
             document.getElementById('line3').style.opacity = 1;
         }, 1000);
 
-        // Le texte 4 apparaît 1 seconde après le texte 3
+        // Texte 4 après 2 secondes
         setTimeout(function() {
             document.getElementById('line4').style.opacity = 1;
         }, 2000);

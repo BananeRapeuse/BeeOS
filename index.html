@@ -15,51 +15,34 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            text-align: center;
+            flex-direction: column;
         }
 
         #ascii-art {
-            white-space: pre;
             opacity: 0;
             transition: opacity 2s ease-in;
-            display: block;
-            text-align: center;
         }
 
-        /* Animation de défilement */
-        @keyframes scrollText {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
-        }
-
-        .scroll {
-            animation: scrollText 10s linear infinite;
+        .error {
+            color: red;
         }
     </style>
 </head>
 <body>
 
-    <div id="ascii-art" class="scroll">
-        <p>                .' '.            __</p>
-        <p>       .        .   .           (__\_</p>
-        <p>        .         .         . -{{_(|8)</p>
-        <p>jgs       ' .  . ' ' .  . '     (__/</p>
+    <div id="ascii-art">
+        <h1>BeeOS Demo</h1>
+        <p>Made with ❤️ by Ph0qu3_111</p>
+        <p>Loading…</p>
+        <p class="error">ERROR: Unknown error</p>
     </div>
 
     <script>
-        // Faire apparaître l'ASCII art après 2 secondes
+        // Faire apparaître le texte après 2 secondes
         setTimeout(function() {
             document.getElementById('ascii-art').style.opacity = 1;
         }, 2000);
-
-        // Redirection après un certain temps (par exemple 10 secondes)
-        setTimeout(function() {
-            window.location.href = "https://www.example.com"; // Remplace par ton URL
-        }, 10000); // Redirection après 10 secondes
     </script>
 
 </body>

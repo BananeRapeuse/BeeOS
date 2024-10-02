@@ -22,8 +22,12 @@
 
         #ascii-art {
             padding: 10px; /* Espacement entre le texte et les bords de l'écran */
+        }
+
+        /* Masque initialement les éléments */
+        .hidden {
             opacity: 0;
-            transition: opacity 2s ease-in;
+            transition: opacity 1s ease-in;
         }
 
         .error {
@@ -34,16 +38,25 @@
 <body>
 
     <div id="ascii-art">
-        <p>BeeOS Demo</p>
-        <p>Made with ❤️ by Ph0qu3_111</p>
-        <p>Loading…</p>
-        <p class="error">ERROR: Unknown error</p>
+        <p id="line1">BeeOS Demo</p>
+        <p id="line2">Made with ❤️ by Ph0qu3_111</p>
+        <p id="line3" class="hidden">Loading…</p>
+        <p id="line4" class="hidden error">ERROR: Unknown error</p>
     </div>
 
     <script>
-        // Faire apparaître le texte après 2 secondes
+        // Le texte 1 et 2 apparaissent instantanément
+        document.getElementById('line1').style.opacity = 1;
+        document.getElementById('line2').style.opacity = 1;
+
+        // Le texte 3 apparaît après 1 seconde
         setTimeout(function() {
-            document.getElementById('ascii-art').style.opacity = 1;
+            document.getElementById('line3').style.opacity = 1;
+        }, 1000);
+
+        // Le texte 4 apparaît 1 seconde après le texte 3
+        setTimeout(function() {
+            document.getElementById('line4').style.opacity = 1;
         }, 2000);
     </script>
 
